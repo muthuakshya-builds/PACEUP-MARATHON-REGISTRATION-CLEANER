@@ -445,6 +445,7 @@ def write_reports(clean_records, problem_records):
     return clean_path, problems_path, summary_path
 
 
+
 def main():
     st.title("🏃 PACEUP – Marathon Registration Cleaner")
     st.caption("Clean Registrations, Smoother Marathons")
@@ -455,14 +456,17 @@ def main():
         "generates reports for human review."
     )
 
-    input_file = DATA_DIR / "registrations.csv"
+    uploaded_file = st.file_uploader(
+        "Upload your marathon registrations CSV",
+        type=["csv"]
+    )
 
-    if not input_file.exists():
-        st.error("registrations.csv not found inside the data folder.")
+    if uploaded_file is None:
+        st.info("Please upload a CSV file containing id and entry columns.")
         return
 
     try:
-        df = pd.read_csv(input_file)
+        df = pd.read_csv(uploaded_file)
 
         if not {"id", "entry"}.issubset(df.columns):
             st.error("CSV must contain columns named id and entry.")
@@ -522,7 +526,6 @@ def main():
 
     except Exception as error:
         st.error(f"Error processing file: {error}")
-
-
+        
 if __name__ == "__main__":
     main()
