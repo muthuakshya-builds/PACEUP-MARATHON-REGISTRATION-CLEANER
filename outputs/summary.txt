@@ -1,0 +1,12 @@
+PACEUP - MARATHON REGISTRATION CLEANER
+==========================================
+
+Valid participants: 1
+Participants needing review: 40
+Possible duplicates: 0
+Total participant records: 41
+
+VALID PARTICIPANTS BY RACE CATEGORY
+21K: 1
+
+Eligibility was not assessed because official organiser age rules were not supplied.
