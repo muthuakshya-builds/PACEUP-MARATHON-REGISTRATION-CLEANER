@@ -50,14 +50,19 @@ The LLM extracts participant information and supporting evidence from the origin
 ## 5. PACEUP’S SIX CORE FEATURES
 • Registration Evidence Tracker: retains the original entry, extracted values and field-level evidence checks; flags unsupported
 extraction.
+
 • Shared Contact Intelligence: detects phone/email details used by different people and flags possible family or guardian sharing
 for human review.
+
 • Cross-Entry Conflict Detective: finds likely same-participant records with conflicting names, contacts or race categories;
 preserves both records.
+
 • Race Eligibility Auditor: checks age against organiser-defined race-category limits and flags missing or potentially ineligible
 registrations.
+
 • Team Registration Completeness Checker: checks team submissions for missing member details and incomplete required
 contact information.
+
 • Smart Problem Prioritisation: groups issues by review priority so organisers can address identity conflicts, duplicate candidates
 and incomplete or invalid records first.
 
@@ -137,8 +142,33 @@ Contains:
 - Streamlit
 - Pandas
 - Python-dotenv
+## 12. Project Structure
+PACEUP/
+│
+├── data/
+│   └── registrations.csv
+│
+├── docs/
+│   ├── PACEUP_Specification.md
+│   └── Red_Team_Results.md
+│
+├── outputs/
+│   ├── clean_list.csv
+│   ├── problems.csv
+│   └── summary.txt
+│
+├── .venv/   
+├── __pycache__/
+│---- main.py     
+├── eval.py      
+├── red_team.py  
+├── test_gemini.py     
+├── system_prompt.txt 
+├── requirements.txt   
+├── README.md        
+└── .gitignore     
 
-## 12. Evaluation
+## 13. Evaluation
 
 The project will be tested using an evaluation harness and red-team testing.
 
